@@ -1,0 +1,5 @@
+tolerations:
+  - key: "infra/type"
+    operator: "Equal"
+    value: "monitoring"
+    effect: "NoSchedule"

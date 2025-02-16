@@ -1,0 +1,44 @@
+alertmanager:
+  alertmanagerSpec:
+    tolerations:
+      - key: "infra/type"
+        operator: "Equal"
+        value: "monitoring"
+        effect: "NoSchedule"
+
+prometheusOperator:
+  tolerations:
+    - key: "infra/type"
+      operator: "Equal"
+      value: "monitoring"
+      effect: "NoSchedule"
+  admissionWebhooks:
+    deployment:
+      tolerations:
+        - key: "infra/type"
+          operator: "Equal"
+          value: "monitoring"
+          effect: "NoSchedule"
+    patch:
+      tolerations:
+        - key: "infra/type"
+          operator: "Equal"
+          value: "monitoring"
+          effect: "NoSchedule"
+
+prometheus:
+  prometheusSpec:
+    enableRemoteWriteReceiver: true
+    enableFeatures: 
+      - remote-write-receiver
+    tolerations:
+      - key: "infra/type"
+        operator: "Equal"
+        value: "monitoring"
+        effect: "NoSchedule"
+
+kubeStateMetrics:
+  enabled: false
+
+grafana:
+  enabled: false

@@ -1,0 +1,15 @@
+releases:
+  - name: kube-prometheus-stack
+    namespace: monitoring
+    chart: ./helm/kube-prometheus-stack
+    values:
+      - ./values/kube-prometheus-stack.yaml
+
+  - name: grafana-operator 
+    namespace: monitoring
+    chart: ./helm/grafana-operator
+    values:
+      - ./values/grafana-operator.yaml
+
+helmDefaults:
+  createNamespace: true
