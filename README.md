@@ -1,4 +1,4 @@
-# Kubernetes LAB
+# Kubernetes LAB - Helms
 
 ## Required
 1. helm
