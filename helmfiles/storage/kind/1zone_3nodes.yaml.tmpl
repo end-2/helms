@@ -27,6 +27,7 @@ nodes:
     - hostPath: {{ .Env.HOME }}/.docker/config.json
       containerPath: /var/lib/kubelet/config.json
       readOnly: true
+
 - role: worker
   image: kindest/node:v1.32.0@sha256:c48c62eac5da28cdadcf560d1d8616cfa6783b58f0d94cf63ad1bf49600cb027
   kubeadmConfigPatches:
@@ -34,7 +35,7 @@ nodes:
       kind: JoinConfiguration
       nodeRegistration:
         kubeletExtraArgs:
-          register-with-taints: "infra/type=monitoring:NoSchedule"
+          register-with-taints: "infra/type=storage:NoSchedule"
           node-labels: "zone=a"
   extraMounts:
     - hostPath: {{ .Env.HOME }}/.docker/config.json
@@ -47,7 +48,7 @@ nodes:
       kind: JoinConfiguration
       nodeRegistration:
         kubeletExtraArgs:
-          register-with-taints: "infra/type=monitoring:NoSchedule"
+          register-with-taints: "infra/type=storage:NoSchedule"
           node-labels: "zone=a"
   extraMounts:
     - hostPath: {{ .Env.HOME }}/.docker/config.json
@@ -60,7 +61,7 @@ nodes:
       kind: JoinConfiguration
       nodeRegistration:
         kubeletExtraArgs:
-          register-with-taints: "infra/type=monitoring:NoSchedule"
+          register-with-taints: "infra/type=storage:NoSchedule"
           node-labels: "zone=a"
   extraMounts:
     - hostPath: {{ .Env.HOME }}/.docker/config.json

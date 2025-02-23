@@ -1,4 +1,10 @@
 auth:
   rootUser: "rootuser"
   rootPassword: "rootpassword"
+
+tolerations:
+  - key: "infra/type"
+    operator: "Equal"
+    value: "storage"
+    effect: "NoSchedule"
   

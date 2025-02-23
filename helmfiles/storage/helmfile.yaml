@@ -4,13 +4,13 @@ repositories:
 
 releases:
   - name: minio
-    namespace: object-storage
+    namespace: storage
     chart: bitnami/minio
     version: 15.0.4
     values:
       - ./values/minio.yaml
   - name: redis
-    namespace: memory-cache
+    namespace: storage
     chart: bitnami/redis
     version: 20.8.0
     values:

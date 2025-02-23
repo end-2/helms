@@ -1,0 +1,13 @@
+master:
+  tolerations:
+    - key: "infra/type"
+      operator: "Equal"
+      value: "storage"
+      effect: "NoSchedule"
+
+replica:
+  tolerations:
+    - key: "infra/type"
+      operator: "Equal"
+      value: "storage"
+      effect: "NoSchedule"
