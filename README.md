@@ -30,7 +30,7 @@ https://github.com/helmfile/helmfile?tab=readme-ov-file#installation
 ```bash
 cd helmfeils/TARGET_STACK
 gomplate --file kind/TARGET_FILE.yaml.tmpl > kind/OUTPUT_FILE_NAME.yaml
-kind create cluster --config ./OUTPUT_FILE_NAME.yaml
+kind create cluster --config kind/OUTPUT_FILE_NAME.yaml
 ```
 
 ## Deploy helmfile
